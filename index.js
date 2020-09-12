@@ -5,14 +5,14 @@ app.use(date=(req,res,next)=>{
   let requestDay= requestDate.getDay();
   let requestHours= requestDate.getHours();
   console.log(requestDate,requestDay,requestHours)
-  if(requestDay<=7 && requestHours>=9 && requestHours<=19){
+  if(requestDay<=5 && requestHours>=9 && requestHours<=17){
    console.log('availble')
    res.sendFile(__dirname + "/routes")
    }
   else
   {
-    console.log('not available')
-    res.sendFile(__dirname + "/routes/error.html")
+   console.log('not available')
+   res.sendFile(__dirname + "/routes/error.html")
   }
 
 })
